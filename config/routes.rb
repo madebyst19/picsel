@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
-  namespace :public do
-    get 'inquiry/index'
-    get 'inquiry/confirm'
-    get 'inquiry/thanks'
-  end
-  namespace :public do
-    get 'cards/index'
-  end
   root 'public/users#top'
+
+  get 'inquiry/index',    to:'inquiry#index'
+  get 'inquiry/confirm',  to:'inquiry#confirm'
+  get 'inquiry/thanks',   to:'inquiry#thanks'
+
   devise_for :admins
   namespace :admins do
+    resources :photos
+    resources :users, only:[:index,:edit,:update,:delete,:show]
+    resources :order, only:[:index,:edit,:update,:show]
+    resources :users, only:[:edit,:update,]
+    resources :order_details, only:[:edit,:update]
+
     resources :photos, only: [:index, :create, :destroy,:update,:edit]do
       collection do
         get "top"
@@ -24,6 +27,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
   namespace :public do
+    get 'cards/index'
     resources :users, only:[:show,:edit,:update,]do
       member do
         get :following, :followers
@@ -73,13 +77,6 @@ Rails.application.routes.draw do
     end
     get "/credits" => "credits#index"
     get '/hashtag' => 'photos#hashtag'
-  end
-  namespace :admins do
-    resources :photos
-    resources :users, only:[:index,:edit,:update,:delete,:show]
-    resources :order, only:[:index,:edit,:update,:show]
-    resources :users, only:[:edit,:update,]
-    resources :order_details, only:[:edit,:update]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
