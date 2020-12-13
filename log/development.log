@@ -68,3 +68,263 @@ Unpermitted parameter: :password_confirmation
 Completed 200 OK in 236ms (Views: 43.8ms | ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
+=======
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2020-12-13 10:25:19 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Public::UsersController#top as HTML
+  Rendering public/users/top.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" INNER JOIN "likes" ON "likes"."photo_id" = "photos"."id" GROUP BY "photo_id" ORDER BY count(likes.id) DESC LIMIT ?[0m  [["LIMIT", 50]]
+  ↳ app/views/public/users/top.html.erb:36
+  Rendered public/users/top.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 159ms (Views: 143.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 10:25:20 +0900
+Processing by Public::UsersController#top as HTML
+  Rendering public/users/top.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" INNER JOIN "likes" ON "likes"."photo_id" = "photos"."id" GROUP BY "photo_id" ORDER BY count(likes.id) DESC LIMIT ?[0m  [["LIMIT", 50]]
+  ↳ app/views/public/users/top.html.erb:36
+  Rendered public/users/top.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 60ms (Views: 49.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/attachments/19bcb57b3655a073ce42782659da5c8c1adfaf65/store/e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a/image" for ::1 at 2020-12-13 10:25:20 +0900
+Started GET "/attachments/c93d2288cf59f33455e188e5df254d0518c75571/store/d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec/image" for ::1 at 2020-12-13 10:25:20 +0900
+Refile::App: Could not find attachment by id: d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec
+Refile::App: Could not find attachment by id: e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a
+Refile::App: [2020-12-13 10:25:21 +0900] GET "/c93d2288cf59f33455e188e5df254d0518c75571/store/d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec/image" 404 9.9ms
+
+Refile::App: [2020-12-13 10:25:21 +0900] GET "/19bcb57b3655a073ce42782659da5c8c1adfaf65/store/e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a/image" 404 12.2ms
+
+Started GET "/attachments/920809cbcfd260619f96d1bbf1b22122c1447f71/store/bf58df92597b897cc4a046abb0f1b11addaeadae53c6c1dc2a12a67d1dcd/image" for ::1 at 2020-12-13 10:25:31 +0900
+Started GET "/attachments/72fe86e4e03bc47e2767bda01f8b405fc1f441cf/store/159337a54eadc6ce45b531ecf22123e9cb0349a8c8fd6204978c709789a6/image" for ::1 at 2020-12-13 10:25:31 +0900
+Started GET "/attachments/075c1bc5b672962c276939d6d3e0035eb3bcb971/store/bab1396a9d24ebf979ca6f1165dfa52096800d07de3bdc2ae78ba3a3ec4c/image" for ::1 at 2020-12-13 10:25:31 +0900
+Refile::App: [2020-12-13 10:25:31 +0900] GET "/920809cbcfd260619f96d1bbf1b22122c1447f71/store/bf58df92597b897cc4a046abb0f1b11addaeadae53c6c1dc2a12a67d1dcd/image" 200 15.1ms
+
+Refile::App: [2020-12-13 10:25:31 +0900] GET "/72fe86e4e03bc47e2767bda01f8b405fc1f441cf/store/159337a54eadc6ce45b531ecf22123e9cb0349a8c8fd6204978c709789a6/image" 200 14.9ms
+
+Started GET "/attachments/76faa14f98813e28d233fa849814a21856171358/store/63e941568363be9f23c706643742610d6f1aae50f83582d1aba54b81ecca/image" for ::1 at 2020-12-13 10:25:41 +0900
+Refile::App: [2020-12-13 10:25:41 +0900] GET "/075c1bc5b672962c276939d6d3e0035eb3bcb971/store/bab1396a9d24ebf979ca6f1165dfa52096800d07de3bdc2ae78ba3a3ec4c/image" 200 15.4ms
+
+Refile::App: [2020-12-13 10:25:41 +0900] GET "/76faa14f98813e28d233fa849814a21856171358/store/63e941568363be9f23c706643742610d6f1aae50f83582d1aba54b81ecca/image" 200 12.0ms
+
+Started POST "/users/sign_in" for ::1 at 2020-12-13 10:26:06 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D0PTl/XfSmSEjEkUByX3VA6ss3GIzh3C1NYIVr/+0sc0kJ+pFpuXCIMQP+GXUXsXp15fc+6cq7UZxFZUX0tiPg==", "user"=>{"email"=>"sabu@xxx.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sabu@xxx.com"], ["LIMIT", 1]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.7ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D0PTl/XfSmSEjEkUByX3VA6ss3GIzh3C1NYIVr/+0sc0kJ+pFpuXCIMQP+GXUXsXp15fc+6cq7UZxFZUX0tiPg==", "user"=>{"email"=>"sabu@xxx.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign In"}
+Unpermitted parameter: :password_confirmation
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 230ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 10:26:08 +0900
+Processing by Public::UsersController#top as HTML
+  Rendering public/users/top.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" INNER JOIN "likes" ON "likes"."photo_id" = "photos"."id" GROUP BY "photo_id" ORDER BY count(likes.id) DESC LIMIT ?[0m  [["LIMIT", 50]]
+  ↳ app/views/public/users/top.html.erb:36
+  Rendered public/users/top.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 46ms (Views: 35.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/attachments/19bcb57b3655a073ce42782659da5c8c1adfaf65/store/e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a/image" for ::1 at 2020-12-13 10:26:08 +0900
+Started GET "/attachments/72fe86e4e03bc47e2767bda01f8b405fc1f441cf/store/159337a54eadc6ce45b531ecf22123e9cb0349a8c8fd6204978c709789a6/image" for ::1 at 2020-12-13 10:26:08 +0900
+Refile::App: Could not find attachment by id: e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a
+Refile::App: [2020-12-13 10:26:08 +0900] GET "/19bcb57b3655a073ce42782659da5c8c1adfaf65/store/e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a/image" 404 1.0ms
+
+Started GET "/attachments/075c1bc5b672962c276939d6d3e0035eb3bcb971/store/bab1396a9d24ebf979ca6f1165dfa52096800d07de3bdc2ae78ba3a3ec4c/image" for ::1 at 2020-12-13 10:26:08 +0900
+Started GET "/attachments/c93d2288cf59f33455e188e5df254d0518c75571/store/d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec/image" for ::1 at 2020-12-13 10:26:08 +0900
+Refile::App: Could not find attachment by id: d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec
+Refile::App: [2020-12-13 10:26:08 +0900] GET "/c93d2288cf59f33455e188e5df254d0518c75571/store/d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec/image" 404 2.2ms
+
+Started GET "/attachments/76faa14f98813e28d233fa849814a21856171358/store/63e941568363be9f23c706643742610d6f1aae50f83582d1aba54b81ecca/image" for ::1 at 2020-12-13 10:26:08 +0900
+Refile::App: [2020-12-13 10:26:08 +0900] GET "/075c1bc5b672962c276939d6d3e0035eb3bcb971/store/bab1396a9d24ebf979ca6f1165dfa52096800d07de3bdc2ae78ba3a3ec4c/image" 200 8.2ms
+
+Refile::App: [2020-12-13 10:26:08 +0900] GET "/72fe86e4e03bc47e2767bda01f8b405fc1f441cf/store/159337a54eadc6ce45b531ecf22123e9cb0349a8c8fd6204978c709789a6/image" 200 20.4ms
+
+Started GET "/" for ::1 at 2020-12-13 10:26:18 +0900
+Started GET "/public/users/about" for ::1 at 2020-12-13 10:26:18 +0900
+Refile::App: [2020-12-13 10:26:18 +0900] GET "/76faa14f98813e28d233fa849814a21856171358/store/63e941568363be9f23c706643742610d6f1aae50f83582d1aba54b81ecca/image" 200 15.6ms
+
+Started GET "/attachments/920809cbcfd260619f96d1bbf1b22122c1447f71/store/bf58df92597b897cc4a046abb0f1b11addaeadae53c6c1dc2a12a67d1dcd/image" for ::1 at 2020-12-13 10:26:18 +0900
+Processing by Public::UsersController#about as HTML
+Processing by Public::UsersController#top as HTML
+  Rendering public/users/about.html.erb within layouts/application
+  Rendered public/users/about.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+  Rendering public/users/top.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" INNER JOIN "likes" ON "likes"."photo_id" = "photos"."id" GROUP BY "photo_id" ORDER BY count(likes.id) DESC LIMIT ?[0m  [["LIMIT", 50]]
+  ↳ app/views/public/users/top.html.erb:36
+  Rendered public/users/top.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 80ms (Views: 38.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/attachments/19bcb57b3655a073ce42782659da5c8c1adfaf65/store/e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a/image" for ::1 at 2020-12-13 10:26:29 +0900
+Started GET "/attachments/920809cbcfd260619f96d1bbf1b22122c1447f71/store/bf58df92597b897cc4a046abb0f1b11addaeadae53c6c1dc2a12a67d1dcd/image" for ::1 at 2020-12-13 10:26:29 +0900
+Refile::App: [2020-12-13 10:26:29 +0900] GET "/920809cbcfd260619f96d1bbf1b22122c1447f71/store/bf58df92597b897cc4a046abb0f1b11addaeadae53c6c1dc2a12a67d1dcd/image" 200 6.8ms
+
+Started GET "/attachments/c93d2288cf59f33455e188e5df254d0518c75571/store/d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec/image" for ::1 at 2020-12-13 10:26:29 +0900
+Refile::App: Could not find attachment by id: e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a
+Refile::App: [2020-12-13 10:26:29 +0900] GET "/19bcb57b3655a073ce42782659da5c8c1adfaf65/store/e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a/image" 404 1.2ms
+
+Refile::App: [2020-12-13 10:26:29 +0900] GET "/920809cbcfd260619f96d1bbf1b22122c1447f71/store/bf58df92597b897cc4a046abb0f1b11addaeadae53c6c1dc2a12a67d1dcd/image" 200 16.5ms
+
+Refile::App: Could not find attachment by id: d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec
+Refile::App: [2020-12-13 10:26:39 +0900] GET "/c93d2288cf59f33455e188e5df254d0518c75571/store/d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec/image" 404 0.6ms
+
+Started GET "/users/sign_up" for ::1 at 2020-12-13 10:27:26 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered users/registrations/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 55ms (Views: 38.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2020-12-13 10:28:20 +0900
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pUCy4JxoqQr5XTBomUOMiVcL/ID3/Xg+g5XRTztfLnyek/7efyx0Zv7BRp0JNwDK/vkQgpGvzklOh49N2+qehQ==", "user"=>{"nickname"=>"taro", "first_name"=>"田中", "last_name"=>"太郎", "first_name_kana"=>"タナカ", "last_name_kana"=>"タロウ", "email"=>"taro@xxx.com", "postal_code"=>"20209320", "address"=>"東京", "telephone_number"=>"0292090", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新規登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "taro@xxx.com"], ["LIMIT", 1]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."last_name" = ? LIMIT ?[0m  [["last_name", "太郎"], ["LIMIT", 1]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "taro@xxx.com"], ["LIMIT", 1]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered users/registrations/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 252ms (Views: 47.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2020-12-13 10:32:33 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pUCy4JxoqQr5XTBomUOMiVcL/ID3/Xg+g5XRTztfLnyek/7efyx0Zv7BRp0JNwDK/vkQgpGvzklOh49N2+qehQ==", "user"=>{"nickname"=>"taro", "first_name"=>"田中", "last_name"=>"太郎", "first_name_kana"=>"タナカ", "last_name_kana"=>"タロウ", "email"=>"taro@xxx.com", "postal_code"=>"20209320", "address"=>"東京", "telephone_number"=>"0292090", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新規登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "taro@xxx.com"], ["LIMIT", 1]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."last_name" = ? LIMIT ?[0m  [["last_name", "太郎"], ["LIMIT", 1]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "taro@xxx.com"], ["LIMIT", 1]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "last_name", "first_name", "last_name_kana", "first_name_kana", "postal_code", "address", "telephone_number", "created_at", "updated_at", "nickname") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "taro@xxx.com"], ["encrypted_password", "$2a$12$9O2hMlJ8ZLxcqNNU99bHnO69L8zlrXa/saYBDq0qFOOHcuJHn7LK6"], ["last_name", "太郎"], ["first_name", "田中"], ["last_name_kana", "タロウ"], ["first_name_kana", "タナカ"], ["postal_code", "20209320"], ["address", "東京"], ["telephone_number", "0292090"], ["created_at", "2020-12-13 10:32:34.020161"], ["updated_at", "2020-12-13 10:32:34.020161"], ["nickname", "taro"]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 281ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 10:32:34 +0900
+Processing by Public::UsersController#top as HTML
+  Rendering public/users/top.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/public/users/top.html.erb:3
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" INNER JOIN "likes" ON "likes"."photo_id" = "photos"."id" GROUP BY "photo_id" ORDER BY count(likes.id) DESC LIMIT ?[0m  [["LIMIT", 50]]
+  ↳ app/views/public/users/top.html.erb:6
+  Rendered public/users/top.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 135ms (Views: 123.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/attachments/19bcb57b3655a073ce42782659da5c8c1adfaf65/store/e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a/image" for ::1 at 2020-12-13 10:32:34 +0900
+Started GET "/attachments/c93d2288cf59f33455e188e5df254d0518c75571/store/d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec/image" for ::1 at 2020-12-13 10:32:34 +0900
+Refile::App: Could not find attachment by id: e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a
+Refile::App: [2020-12-13 10:32:34 +0900] GET "/19bcb57b3655a073ce42782659da5c8c1adfaf65/store/e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a/image" 404 3.3ms
+
+Refile::App: Could not find attachment by id: d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec
+Refile::App: [2020-12-13 10:32:34 +0900] GET "/c93d2288cf59f33455e188e5df254d0518c75571/store/d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec/image" 404 0.9ms
+
+Started DELETE "/users/sign_out" for ::1 at 2020-12-13 10:32:37 +0900
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1ZbcECZP79+lvX/NalxMWfyx4xdNjdvJULX7aD1sE8vuRZAuxQsys6IhCTj6KMAaVUMPFSvfbb6dp6Vq3dmjMg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 10:32:37 +0900
+Processing by Public::UsersController#top as HTML
+  Rendering public/users/top.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" INNER JOIN "likes" ON "likes"."photo_id" = "photos"."id" GROUP BY "photo_id" ORDER BY count(likes.id) DESC LIMIT ?[0m  [["LIMIT", 50]]
+  ↳ app/views/public/users/top.html.erb:36
+  Rendered public/users/top.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 51ms (Views: 40.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/attachments/19bcb57b3655a073ce42782659da5c8c1adfaf65/store/e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a/image" for ::1 at 2020-12-13 10:32:37 +0900
+Started GET "/attachments/c93d2288cf59f33455e188e5df254d0518c75571/store/d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec/image" for ::1 at 2020-12-13 10:32:37 +0900
+Refile::App: Could not find attachment by id: e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a
+Refile::App: [2020-12-13 10:32:37 +0900] GET "/19bcb57b3655a073ce42782659da5c8c1adfaf65/store/e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a/image" 404 0.9ms
+
+Refile::App: Could not find attachment by id: d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec
+Refile::App: [2020-12-13 10:32:38 +0900] GET "/c93d2288cf59f33455e188e5df254d0518c75571/store/d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec/image" 404 0.6ms
+
+Started GET "/users/sign_up" for ::1 at 2020-12-13 10:32:39 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered users/registrations/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 52ms (Views: 38.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2020-12-13 10:33:35 +0900
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SEmD5MmTO2ntBM2DPSwrfKNPQJ3bLBDWdrIZMhqRUyxtwozr2lmCf0IOgInrsMPdWF93+O2tRAa4Jib+vj6qhQ==", "user"=>{"nickname"=>"よじ", "first_name"=>"佐々木", "last_name"=>"用事", "first_name_kana"=>"ささき", "last_name_kana"=>"ようじ", "email"=>"yoji@xxx.com", "postal_code"=>"92928928", "address"=>"神奈川県用事私", "telephone_number"=>"９２８２９２８９", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新規登録"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "yoji@xxx.com"], ["LIMIT", 1]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."last_name" = ? LIMIT ?[0m  [["last_name", "用事"], ["LIMIT", 1]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "yoji@xxx.com"], ["LIMIT", 1]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "last_name", "first_name", "last_name_kana", "first_name_kana", "postal_code", "address", "telephone_number", "created_at", "updated_at", "nickname") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "yoji@xxx.com"], ["encrypted_password", "$2a$12$BayEgfGE.HsMRX1/eWfgBe9P3KQ2ZcYNdx1POOnc.b1LzWMYXAu/m"], ["last_name", "用事"], ["first_name", "佐々木"], ["last_name_kana", "ようじ"], ["first_name_kana", "ささき"], ["postal_code", "92928928"], ["address", "神奈川県用事私"], ["telephone_number", "９２８２９２８９"], ["created_at", "2020-12-13 10:33:35.548579"], ["updated_at", "2020-12-13 10:33:35.548579"], ["nickname", "よじ"]]
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 214ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 10:33:35 +0900
+Processing by Public::UsersController#top as HTML
+  Rendering public/users/top.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/public/users/top.html.erb:3
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" INNER JOIN "likes" ON "likes"."photo_id" = "photos"."id" GROUP BY "photo_id" ORDER BY count(likes.id) DESC LIMIT ?[0m  [["LIMIT", 50]]
+  ↳ app/views/public/users/top.html.erb:6
+  Rendered public/users/top.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 63ms (Views: 52.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/attachments/19bcb57b3655a073ce42782659da5c8c1adfaf65/store/e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a/image" for ::1 at 2020-12-13 10:33:35 +0900
+Started GET "/attachments/c93d2288cf59f33455e188e5df254d0518c75571/store/d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec/image" for ::1 at 2020-12-13 10:33:35 +0900
+Refile::App: Could not find attachment by id: e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a
+Refile::App: [2020-12-13 10:33:35 +0900] GET "/19bcb57b3655a073ce42782659da5c8c1adfaf65/store/e1d51783d098fe6adeb24b347594f69e5a56f7e03d4f68001c06abcf540a/image" 404 1.8ms
+
+Refile::App: Could not find attachment by id: d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec
+Refile::App: [2020-12-13 10:33:35 +0900] GET "/c93d2288cf59f33455e188e5df254d0518c75571/store/d5908cd892c844fdc2f8d10cddb21e689eba648876bd50c26ee60d9b7eec/image" 404 0.8ms
+
+>>>>>>> 4a2c4f27d429bab7c6aa836ec516a4b39fb33988

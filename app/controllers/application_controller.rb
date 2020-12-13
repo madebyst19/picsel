@@ -20,11 +20,4 @@ class ApplicationController < ActionController::Base
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :first_name_kana, :last_name_kana, :postal_code, :address, :telephone_number,:email,:nickname])
     end
-
-    # def set_hashtag_search
-    #   # 検索オブジェクト
-    #   # @q = Hashtag.ransack(params[:q])
-    #   # @hashtags = @q.result
-    #   @hashtags = HashTag.where(['hashname LIKE ?', "%#{params[:q]}%"])
-    # end
 end
