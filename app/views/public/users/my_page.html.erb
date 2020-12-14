@@ -2,7 +2,7 @@
 <%= breadcrumbs separator: " &rsaquo; " %>
         <div class="yourname">
             <h3>
-            Abouut <%= @user.first_name + @user.last_name %>
+            About <%= @user.first_name + @user.last_name %>
             <%= link_to edit_public_user_path(@user) do%>
                 <i class="fas fa-user-edit"></i>
             <% end %>
