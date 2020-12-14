@@ -1,11 +1,8 @@
 class Admins::PhotosController < ApplicationController
   def top
-    # byebug
     @photos = Photo.all
-      # @photos = Photo.where(user_id: current_user.id)
   end
   def index
-    # binding.pry
     @user = User.find(params[:user_id])
     @photos = Photo.where(user_id: @user.id)
   end
@@ -20,7 +17,7 @@ class Admins::PhotosController < ApplicationController
     if @photo.update(photo_params)
         redirect_to admins_photo_path(@photo)
       else
-        render 
+        render
       end
   end
 
