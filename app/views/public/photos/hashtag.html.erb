@@ -5,51 +5,23 @@
 <%= @hashtag_photos_count %>
 件</h3>
 </center>
-        <div class="recommend_item_each">
-        <div class="recommend_photographer">
-            <% @hashtag_photos.each do |hashtag_photo| %>
-                <div class="photo_index_view">
-                    <%= link_to public_photo_path(hashtag_photo.photo) do  %>
-                        <%= attachment_image_tag hashtag_photo.photo,:image,fallback: "noimages.jpg",class:"image_index",style:"border-radius: 10px;"%>
-                    <% end %>
-                </div>
-            <% end%>
-        </div>
+<div class="recommend_item_each">
+    <div class="recommend_photographer">
+        <% @hashtag_photos.each do |hashtag_photo| %>
+            <div class="photo_index_view">
+                <%= link_to public_photo_path(hashtag_photo.photo) do  %>
+                    <%= attachment_image_tag hashtag_photo.photo,:image,fallback: "noimages.jpg",class:"image_index",style:"border-radius: 10px;"%>
+                <% end %>
+            </div>
+        <% end%>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <% if params[:name] == nil %>
-
-        <% else %>
-        <div class= "col-xs-12 col-lg-12 col-md-12 col-sm-12">
-            <div class="hashtag-post-box">
-                <h3 class="search-title">#<%= @hashtag.hashname %>:  <%= @photo.count %> 件 </h3>
-                <div class="flex-box">
+</div>
+<% if params[:name] == nil %>
+<% else %>
+    <div class= "col-xs-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="hashtag-post-box">
+            <h3 class="search-title">#<%= @hashtag.hashname %>:  <%= @photo.count %> 件 </h3>
+            <div class="flex-box">
                 <% @photo.each do |photo| %>
                     <div class= "post-image-index-post-box">
                         <p class="index-post-box-top">
@@ -58,7 +30,6 @@
                         <span class='far fa-comments index-comment-count' id='comment-count_<%= photo.id %>' style="color: #777777;">
                             <%= render 'post_image_comments/comment-count', photo:photo %>
                         </span>
-
                         <span id = "favorite-button_<%= photo.id %>"class="post-box-top-favorite">
                             <%= render 'post_image_favorites/favorite',photo: photo %>
                         </span>
@@ -69,13 +40,15 @@
                                 </span>
                             <% end %>
                         </p>
-                        <div class="image-show-body-hash" style="padding:2%">
-                            <%= simple_format(photo.body.truncate(50))%>
-                            <% if photo.body.length > 50 %>
-                                <span class="text-prev"><%= link_to '続きを読む', public_photo_path(photo), data: {"turbolinks" => false} %>
-                                </span>
-                            <% end %>
-                        </div>
+                    <div class="image-show-body-hash" style="padding:2%">
+                        <%= simple_format(photo.body.truncate(50))%>
+                        <% if photo.body.length > 50 %>
+                            <span class="text-prev"><%= link_to '続きを読む', public_photo_path(photo), data: {"turbolinks" => false} %>
+                            </span>
+                        <% end %>
                     </div>
                 <% end %>
-        <% end %>
+            </div>
+        </div>
+    </div>
+<% end %>
