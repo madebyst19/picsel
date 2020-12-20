@@ -83,7 +83,6 @@
     <div class="col-xs-3">
         <div class="photo_profile">
             <%= link_to public_photos_path(user_id: @user.id) do %>
-                <%# <%= hidden_field_tag :user_id, @user.id %>
                 <center>
                 <%= attachment_image_tag @user,:profile_image,fallback: "noimages.jpg", style: 'border-radius: 50%; width: 100px;height: 100px;object-fit: cover;' %>
                     <p><%= @user.nickname %></p>
