@@ -21,19 +21,13 @@ class User < ApplicationRecord
                       length: { minimum: 1,maximum: 20}
   validates :email, presence: true, uniqueness: true,
                       length: { minimum: 1,maximum: 50}
-  # validates :introduce,length: { minimum: 1,maximum: 200}
-  # has_one :card, optional: true
+
 
   def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)
   end
   def follow!(other_user)
-    # if Relationships.find_by(following_id: other_user.id, follower_id: current_user.id)
-      # return false
-    # else
-      
       following_relationships.create!(following_id: other_user.id)
-    # end
   end
   def unfollow!(other_user)
     following_relationships.find_by(following_id: other_user.id).destroy

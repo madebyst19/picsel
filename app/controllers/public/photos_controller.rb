@@ -1,7 +1,7 @@
 class Public::PhotosController < ApplicationController
     before_action :authenticate_user!
     def index
-        @tag_list = Tag.all  
+        @tag_list = Tag.all
         if params[:user_id].nil?
             @user = current_user
         else
@@ -14,7 +14,7 @@ class Public::PhotosController < ApplicationController
     def new
         @photo = Photo.new
         @gallaries = Gallary.all
-        @tag_list = Tag.all 
+        @tag_list = Tag.all
     end
     def create
         @photo = current_user.photos.new(photo_params)
