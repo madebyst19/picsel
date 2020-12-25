@@ -69,7 +69,7 @@
                             <h5>A4size ¥<%= @photo.price %>(税込)</h5>
                             <div class="photo_price">
                                 <%= form_with(model: @cart_item,url:public_cart_items_path, local: true, method: :post) do |f| %>
-                                    <%= f.select :amount, [*1..100], include_blank: "個数選択" %>
+                                    <%= f.select :amount, [*1..5], include_blank: "個数選択" %>
                                     <%= f.hidden_field :photo_id, :value => @photo.id %>
                                     <%= f.submit "カートにいれる",class:"btn btn-primary btn-sm"%>
                                 <% end %>
