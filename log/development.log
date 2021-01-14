@@ -12601,3 +12601,34 @@ puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
 puma (3.12.6) lib/puma/server.rb:476:in `process_client'
 puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-01-14 22:33:32 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/user/.anyenv/envs/rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Public::UsersController#top as HTML
+  Rendering public/users/top.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" INNER JOIN "likes" ON "likes"."photo_id" = "photos"."id" GROUP BY "photo_id" ORDER BY count(likes.id) DESC LIMIT ?[0m  [["LIMIT", 50]]
+  ↳ app/views/public/users/top.html.erb:36
+  Rendered public/users/top.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 988ms (Views: 968.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/public/users/tomo" for ::1 at 2021-01-14 22:33:36 +0900
+Processing by Public::UsersController#tomo as HTML
+  Rendering public/users/tomo.html.erb
+  Rendered public/users/tomo.html.erb (12.8ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "photo.png" is not present in the asset pipeline.
+):
+    577:                     </div>
+    578:                     <div class="col-xs-6">
+    579:                         <div class="home__img",style="border-radius:.5rem;">
+    580:                           <%= image_tag 'photo.png' %>
+    581:                         </div>
+    582:                     </div>
+    583:                 </div>
+  
+app/views/public/users/tomo.html.erb:580:in `_app_views_public_users_tomo_html_erb__1532219536958134014_70224635511180'
+app/controllers/public/users_controller.rb:23:in `tomo'
