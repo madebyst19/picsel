@@ -1,7 +1,8 @@
 class Public::UsersController < ApplicationController
-    before_action :authenticate_user!, except: [:top,:about]
+    before_action :authenticate_user!, except: [:top,:about,:tomo]
     before_action :set_search
     def top
+        
         # ランキング表示
         # photo_like_count = Photo.joins(:likes).group(:photo_id).count
         # photo_liked_ids = Hash[photo_like_count.sort_by{ |_, v| -v }].keys
@@ -17,6 +18,9 @@ class Public::UsersController < ApplicationController
         # ON "likes"."photo_id" = "photos"."id"
         # GROUP BY "photo_id"
         # ORDER BY count(likes.id) DESC
+    end
+    def tomo
+        render :layout => nil
     end
     def my_page
         @user = current_user
