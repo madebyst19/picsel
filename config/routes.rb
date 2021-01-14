@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'inquiry/index',    to:'inquiry#index'
   get 'inquiry/confirm',  to:'inquiry#confirm'
   get 'inquiry/thanks',   to:'inquiry#thanks'
+  get 'prof/index',     to:'prof#index'
 
   devise_for :admins
   namespace :admins do
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
       end
       collection do
         get "about"
+        get "tomo"
         get "my_page"
         get "search"
         get "users_unsubscribe" => "userr#unsubscribe"
